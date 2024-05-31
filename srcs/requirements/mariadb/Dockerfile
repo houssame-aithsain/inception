@@ -1,8 +1,7 @@
 FROM debian
-RUN apt-get update && apt-get upgrade
-RUN apt-get install -y mariadb-server
-COPY 50-server.cnf /etc/mysql/mariadb.conf.d/.
-COPY init.sql /etc/mysql/init.sql
-COPY script.sh .
+RUN apt-get update && apt-get install -y mariadb-server
+COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/.
+COPY ./conf/init.sql /etc/mysql/init.sql
+COPY ./tools/script.sh .
 RUN mkdir /run/mysqld && chmod +x script.sh
 CMD ["./script.sh"]
