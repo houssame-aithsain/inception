@@ -14,4 +14,3 @@ else
 fi
 
 echo "Starting PHP-FPM..."
-php-fpm8.2 -F
