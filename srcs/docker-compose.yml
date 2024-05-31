@@ -2,22 +2,45 @@ services:
 
   mariadb:
     build: ./requirements/mariadb
+    image: mariadb
     container_name: mariadb
+    environment:
+      DBNAME: ${DBNAME}
+      DBUSER: ${DBUSER}
+      DBPASS: ${DBPASS}
+      FROMHOST: ${FROMHOST}
     volumes:
       - database:/var/lib/mysql
     networks:
       - inception
   wordpress:
     build: ./requirements/wordpress
+    image: wordpress
     container_name: wordpress
     depends_on:
       - mariadb
     networks:
       - inception
+    env_file:
+    - .env
+    environment:
+      DBNAME: ${DBNAME}
+      DBUSER: ${DBUSER}
+      DBPASS: ${DBPASS}
+      DBHOST: ${DBHOST}
+      URL: ${URL}
+      TITLE: ${TITLE}
+      SUPERUSER: ${SUPERUSER}
+      SUPERPASS: ${SUPERPASS}
+      SUPEREMAIL: ${SUPEREMAIL}
+      USER_LOGIN: ${USER_LOGIN}
+      USER_EMAIL: ${USER_EMAIL}
+      USER_PASS: ${USER_PASS}
     volumes:
       - web:/var/www/html
   nginx:
     build: ./requirements/nginx
+    image: nginx
     container_name: nginx
     depends_on: 
       - wordpress

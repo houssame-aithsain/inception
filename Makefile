@@ -10,13 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = inception
-
 all:
-	@sudo mkdir /home/hait-hsa/data
-	@sudo mkdir /home/hait-hsa/data/database
-	@sudo mkdir /home/hait-hsa/data/web
-	cd srcs && docker compose up --build
+	@if [ ! -d "/home/$(USER)/data" ]; then \
+		sudo mkdir /home/$(USER)/data; \
+	fi
+	@if [ ! -d "/home/$(USER)/data/database" ]; then \
+		sudo mkdir /home/$(USER)/data/database; \
+	fi
+	@if [ ! -d "/home/$(USER)/data/web" ]; then \
+		sudo mkdir /home/$(USER)/data/web; \
+	fi
+	@cd srcs && docker compose up --build
 
 clean:
 	@echo "containers has been removed."
@@ -24,7 +28,7 @@ clean:
 
 fclean: clean
 	@echo "erase all...."
-	@sudo rm -rf /home/hait-hsa/data
+	@sudo rm -rf /home/$(USER)/data
 	@docker volume rm -f srcs_database  srcs_web
 	@docker  system  prune -af
 
