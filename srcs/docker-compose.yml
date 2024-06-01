@@ -21,8 +21,6 @@ services:
       - mariadb
     networks:
       - inception
-    env_file:
-    - .env
     environment:
       DBNAME: ${DBNAME}
       DBUSER: ${DBUSER}
@@ -42,8 +40,6 @@ services:
     build: ./requirements/nginx
     image: nginx
     container_name: nginx
-    depends_on: 
-      - wordpress
     ports:
       - 443:443
     volumes:

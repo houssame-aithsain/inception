@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hait-hsa <hait-hsa@student.42.fr>              +#+  +:+       +#+         #
+#    By: elpira <elpira@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/31 14:21:31 by hait-hsa            #+#    #+#              #
-#    Updated: 2024/05/31 14:21:31 by hait-hsa           ###   ########.fr        #
+#    Created: 2024/06/01 11:25:11 by elpira            #+#    #+#              #
+#    Updated: 2024/06/01 11:25:38 by elpira           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,18 @@ all:
 	@if [ ! -d "/home/$(USER)/data/web" ]; then \
 		sudo mkdir /home/$(USER)/data/web; \
 	fi
-	@cd srcs && docker compose up --build
+	@cd srcs && docker compose up --build -d
 
 clean:
 	@echo "containers has been removed."
-	@cd srcs && docker compose down
+	@cd srcs && docker compose down -v
 
 fclean: clean
 	@echo "erase all...."
 	@sudo rm -rf /home/$(USER)/data
 	@docker volume rm -f srcs_database  srcs_web
 	@docker  system  prune -af
+	@echo yes | docker buildx prune
 
 re: fclean all
 
