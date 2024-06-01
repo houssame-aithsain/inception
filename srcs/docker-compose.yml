@@ -13,6 +13,8 @@ services:
       - database:/var/lib/mysql
     networks:
       - inception
+    restart: always
+
   wordpress:
     build: ./requirements/wordpress
     image: wordpress
@@ -36,6 +38,8 @@ services:
       USER_PASS: ${USER_PASS}
     volumes:
       - web:/var/www/html
+    restart: always
+
   nginx:
     build: ./requirements/nginx
     image: nginx
@@ -46,6 +50,7 @@ services:
       - web:/var/www/html
     networks:
       - inception
+    restart: always
 
 networks:
   inception:
@@ -59,6 +64,6 @@ volumes:
       device: /home/elpira/data/web
   database:
     driver_opts:
-      o: bind 
+      o: bind
       type : none
       device: /home/elpira/data/database

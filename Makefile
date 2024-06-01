@@ -6,7 +6,7 @@
 #    By: elpira <elpira@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/01 11:25:11 by elpira            #+#    #+#              #
-#    Updated: 2024/06/01 11:25:38 by elpira           ###   ########.fr        #
+#    Updated: 2024/06/01 16:54:09 by elpira           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ all:
 	fi
 	@cd srcs && docker compose up --build -d
 
+stop:
+	@docker stop $$(docker ps -q)
+
 clean:
 	@echo "containers has been removed."
 	@cd srcs && docker compose down -v
@@ -29,10 +32,8 @@ clean:
 fclean: clean
 	@echo "erase all...."
 	@sudo rm -rf /home/$(USER)/data
-	@docker volume rm -f srcs_database  srcs_web
-	@docker  system  prune -af
-	@echo yes | docker buildx prune
+	@docker system prune
 
 re: fclean all
 
-.PHONY: build all re clean fclean
+.PHONY: build all stop re clean fclean
