@@ -25,7 +25,7 @@ Isolation:
 Docker containers: Containers provide process-level isolation, where each container runs as an isolated process on the host operating system. They share the host operating system kernel but have their own filesystem, network, and process namespace, providing lightweight isolation.
 Virtual Machines: VMs provide stronger isolation because they emulate an entire virtualized hardware stack and operating system instance for each VM. This isolation is similar to running multiple physical servers, making VMs more suitable for multi-tenant environments and security-sensitive workloads.
 
-Portability:
+<h3>Portability:</h3>
 
 Docker containers: Containers are portable and can be easily moved or replicated between different computing environments, such as development laptops, data centers, and cloud platforms, without modification.
 Virtual Machines: VMs are also portable but may require additional configuration or conversion when moving between different virtualization platforms due to differences in hypervisor architectures and formats.
