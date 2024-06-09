@@ -20,7 +20,7 @@ Resource requirements:
 Docker containers: Containers are lightweight and share resources with the host operating system, making them more efficient in terms of resource utilization. They typically require less disk space, memory, and CPU compared to VMs.
 Virtual Machines: VMs are more resource-intensive because they emulate an entire operating system and virtual hardware stack for each instance. Each VM requires its own memory, disk space, and CPU allocation, which can lead to higher resource overhead compared to containers.
 
-Isolation:
+<>Isolation:
 
 Docker containers: Containers provide process-level isolation, where each container runs as an isolated process on the host operating system. They share the host operating system kernel but have their own filesystem, network, and process namespace, providing lightweight isolation.
 Virtual Machines: VMs provide stronger isolation because they emulate an entire virtualized hardware stack and operating system instance for each VM. This isolation is similar to running multiple physical servers, making VMs more suitable for multi-tenant environments and security-sensitive workloads.
