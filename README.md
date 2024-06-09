@@ -7,7 +7,7 @@ Docker is a popular platform used for developing, shipping, and running applicat
 A container is a lightweight, standalone, executable package that contains everything needed to run a piece of software, including the code, runtime, system tools, libraries, and settings.
 <h1>What is Virtual Machine</h1>
 A Virtual Machine (VM) is a software emulation of a physical computer that runs an operating system and applications. It enables you to run multiple operating systems and applications on a single physical machine, known as the host, by creating isolated environments called virtual machines.
-<h2>What is the deferce between docker and vertual machine?:<h2>
+<h2>What is the deferce between docker and vertual machine?:</h2>
 Docker and Virtual Machines (VMs) serve similar purposes in that they both enable the isolation and deployment of software applications. However, they differ in their architecture, resource requirements, and level of abstraction:
 
     Architecture:
