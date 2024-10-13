@@ -39,7 +39,6 @@
             </li>
         </ul>
     </li>
-
     <li>
         <strong>Clone the Repository:</strong>
         <p>Clone the project repository to your local machine using Git:</p>
@@ -47,19 +46,16 @@
         <p>Navigate to the project directory:</p>
         <pre><code>cd inception</code></pre>
     </li>
-
     <li>
         <strong>Docker Compose Setup:</strong>
         <p>Ensure you have a <code>docker-compose.yml</code> file in your project directory. This file defines the services, networks, and volumes for the project. If you don’t have one, create it using the provided configurations.</p>
     </li>
-
     <li>
         <strong>Build and Run Containers:</strong>
         <p>Build and start the containers using Docker Compose:</p>
         <pre><code>docker-compose up -d</code></pre>
         <p>This command will create and start the containers in detached mode.</p>
     </li>
-
     <li>
         <strong>Access the Application:</strong>
         <p>Once the containers are running, you can access the services in your browser:</p>
@@ -75,7 +71,6 @@
             </li>
         </ul>
     </li>
-
     <li>
         <strong>Stopping the Containers:</strong>
         <p>To stop the running containers, execute:</p>
