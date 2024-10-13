@@ -42,19 +42,32 @@
     <li>
         <strong>Clone the Repository:</strong>
         <p>Clone the project repository to your local machine using Git:</p>
-        <pre><code>git clone https://github.com/yourusername/inception.git</code></pre>
+        <pre><code>git clone https://github.com/houssame-aithsain/inception.git</code></pre>
         <p>Navigate to the project directory:</p>
         <pre><code>cd inception</code></pre>
     </li>
     <li>
         <strong>Docker Compose Setup:</strong>
-        <p>Ensure you have a <code>docker-compose.yml</code> file in your project directory. This file defines the services, networks, and volumes for the project. If you don’t have one, create it using the provided configurations.</p>
+        <p>Ensure you have a <code>docker-compose.yml</code> file in your project directory. This file defines the services, networks, and volumes for the project.</p>
     </li>
     <li>
         <strong>Build and Run Containers:</strong>
-        <p>Build and start the containers using Docker Compose:</p>
-        <pre><code>docker-compose up -d</code></pre>
+        <p>Build and start the containers by Makefile using Docker Compose:</p>
+        <pre><code>make</code></pre>
         <p>This command will create and start the containers in detached mode.</p>
+        <pre><code>
+        all:
+	@if [ ! -d "/home/$(USER)/data" ]; then \
+		sudo mkdir /home/$(USER)/data; \
+	fi
+	@if [ ! -d "/home/$(USER)/data/database" ]; then \
+		sudo mkdir /home/$(USER)/data/database; \
+	fi
+	@if [ ! -d "/home/$(USER)/data/web" ]; then \
+		sudo mkdir /home/$(USER)/data/web; \
+	fi
+	@cd srcs && docker compose up --build -d
+        </code></pre>
     </li>
     <li>
         <strong>Access the Application:</strong>
