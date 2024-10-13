@@ -57,16 +57,16 @@
         <p>This command will create and start the containers in detached mode.</p>
         <pre><code>
         all:
-	@if [ ! -d "/home/$(USER)/data" ]; then \
-		sudo mkdir /home/$(USER)/data; \
-	fi
-	@if [ ! -d "/home/$(USER)/data/database" ]; then \
-		sudo mkdir /home/$(USER)/data/database; \
-	fi
-	@if [ ! -d "/home/$(USER)/data/web" ]; then \
-		sudo mkdir /home/$(USER)/data/web; \
-	fi
-	@cd srcs && docker compose up --build -d
+	        @if [ ! -d "/home/$(USER)/data" ]; then \
+		    sudo mkdir /home/$(USER)/data; \
+	        fi
+	        @if [ ! -d "/home/$(USER)/data/database" ]; then \
+	        	sudo mkdir /home/$(USER)/data/database; \
+	        fi
+	        @if [ ! -d "/home/$(USER)/data/web" ]; then \
+	        	sudo mkdir /home/$(USER)/data/web; \
+	        fi
+	        @cd srcs && docker compose up --build -d
         </code></pre>
     </li>
     <li>
