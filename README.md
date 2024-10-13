@@ -25,3 +25,7 @@
     <li><strong>Docker Images</strong>: Understand the process of creating Docker images, which are templates used to create containers, and how to manage them.</li>
     <li><strong>Containers</strong>: Gain practical experience in managing containers, including starting, stopping, and linking them together to form a cohesive application.</li>
 </ul>
+<h2>How to Install and Run the Project</h2>
+<ol>
+    <li>Clone the Repository</li>
+</ol>
