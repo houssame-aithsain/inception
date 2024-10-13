@@ -1,9 +1,12 @@
-<h1>Inception Project Overview</h1>
-
-<h2>Introduction</h2>
+<h1>Inception</h1>
 <p>
-    The Inception project is designed to enhance and solidify understanding of Docker, a powerful platform for developing, shipping, and running applications inside containers. This project encompasses a comprehensive approach, starting from the foundational knowledge of Docker to the practical application of its features.
+    The Inception project is designed to enhance and solidify understanding of Docker, a powerful platform for developing, shipping, and running applications inside containers. This project encompasses a comprehensive approach, starting from the foundational knowledge of Docker to the practical application of its features. The containers in this project will specifically include:
 </p>
+<ul>
+    <li><strong>Nginx</strong>: A high-performance web server that will serve as a reverse proxy and load balancer.</li>
+    <li><strong>WordPress</strong>: A popular content management system (CMS) for building and managing websites.</li>
+    <li><strong>MariaDB</strong>: An open-source database management system that will store the data for the WordPress instance.</li>
+</ul>
 
 <h2>Objectives</h2>
 <ul>
