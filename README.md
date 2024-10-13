@@ -26,11 +26,6 @@
     <li><strong>Containers</strong>: Gain practical experience in managing containers, including starting, stopping, and linking them together to form a cohesive application.</li>
 </ul>
 <h2>How to Install and Run the Project</h2>
-<ol>
-    <li>Clone the Repository</li>
-    <li>Run the project</li>
-    <pre><code>$> make</code></pre>
-<h2>How to Install and Run the Project</h2>
 
 <p>Follow these steps to install and run the Inception project:</p>
 
