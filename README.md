@@ -28,4 +28,63 @@
 <h2>How to Install and Run the Project</h2>
 <ol>
     <li>Clone the Repository</li>
+    <li>Run the project</li>
+    <pre><code>$> make</code></pre>
+<h2>How to Install and Run the Project</h2>
+
+<p>Follow these steps to install and run the Inception project:</p>
+
+<ol>
+    <li>
+        <strong>Prerequisites:</strong>
+        <ul>
+            <li>Ensure that you have Docker installed on your system. You can download Docker from the official website: <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a>.</li>
+            <li>Verify that Docker is running correctly by executing the following command in your terminal:
+                <pre><code>docker --version</code></pre>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <strong>Clone the Repository:</strong>
+        <p>Clone the project repository to your local machine using Git:</p>
+        <pre><code>git clone https://github.com/yourusername/inception.git</code></pre>
+        <p>Navigate to the project directory:</p>
+        <pre><code>cd inception</code></pre>
+    </li>
+
+    <li>
+        <strong>Docker Compose Setup:</strong>
+        <p>Ensure you have a <code>docker-compose.yml</code> file in your project directory. This file defines the services, networks, and volumes for the project. If you don’t have one, create it using the provided configurations.</p>
+    </li>
+
+    <li>
+        <strong>Build and Run Containers:</strong>
+        <p>Build and start the containers using Docker Compose:</p>
+        <pre><code>docker-compose up -d</code></pre>
+        <p>This command will create and start the containers in detached mode.</p>
+    </li>
+
+    <li>
+        <strong>Access the Application:</strong>
+        <p>Once the containers are running, you can access the services in your browser:</p>
+        <ul>
+            <li><strong>Nginx:</strong> Open your browser and go to <a href="http://localhost" target="_blank">http://localhost</a>.</li>
+            <li><strong>WordPress:</strong> Access WordPress at <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> (or the port you configured).</li>
+            <li><strong>MariaDB:</strong> You can connect to MariaDB using a MySQL client with the following credentials:
+                <ul>
+                    <li>Host: <code>127.0.0.1</code></li>
+                    <li>Username: <code>root</code></li>
+                    <li>Password: <code>yourpassword</code></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <strong>Stopping the Containers:</strong>
+        <p>To stop the running containers, execute:</p>
+        <pre><code>docker-compose down</code></pre>
+        <p>This command will stop and remove the containers defined in the <code>docker-compose.yml</code> file.</p>
+    </li>
 </ol>
